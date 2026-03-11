@@ -22,7 +22,7 @@
                 inputmode="numeric"
                 name="telepon"
                 id="telepon"
-                pattern="62[0-9]{5,20}"
+                pattern="[0-9]{5,20}"
               />
             </div>
             <div class="form_action--button">
@@ -31,17 +31,17 @@
             </div>
           </form>
             <td>
-                <table class="list" id="contactList">
+              <table class="list" id="contactList">
                     <thead>
                         <tr>
-                            <th>Nama</th>
+                            <th>Nama <button onclick="sortByNama()">↕</button></th>
                             <th>Nomor Telepon</th>
                         </tr>
                     </thead>
                     <tbody>
 
                     </tbody>
-                </table>
+                </table>  
             </td>
         </td>
       </tr>
@@ -49,3 +49,4 @@
     <script src="./script.js"></script>
   </body>
 </html>
+

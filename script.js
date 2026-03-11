@@ -60,3 +60,29 @@ function resetForm() {
   document.getElementById("telepon").value = "";
   selectedRow = null;
 }
+
+//Sort the data by Alpha
+let sortDirection = true; // true = ASC, false = DESC
+
+function sortByNama() {
+  let table = document.getElementById("contactList");
+  let tbody = table.tBodies[0];
+  let rows = Array.from(tbody.rows);
+
+  rows.sort(function (a, b) {
+    let namaA = a.cells[0].innerText.toLowerCase();
+    let namaB = b.cells[0].innerText.toLowerCase();
+
+    if (sortDirection) {
+      return namaA.localeCompare(namaB); // ASC
+    } else {
+      return namaB.localeCompare(namaA); // DESC
+    }
+  });
+
+  sortDirection = !sortDirection; // balik arah sort
+
+  rows.forEach(function (row) {
+    tbody.appendChild(row);
+  });
+}
